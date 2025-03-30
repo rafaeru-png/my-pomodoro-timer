@@ -1,0 +1,185 @@
+/* Reset & Variáveis */
+:root {
+    --pomodoro: #e74c3c;
+    --short-break: #2ecc71;
+    --long-break: #3498db;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --gray: #95a5a6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--dark);
+    color: var(--light);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Header */
+.timer-header h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.timer-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.timer-tabs button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timer-tabs button.active {
+    background: var(--pomodoro);
+    font-weight: bold;
+}
+
+/* Timer Display */
+.timer-display {
+    margin: 2rem 0;
+}
+
+.time {
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-family: 'Courier New', monospace;
+}
+
+.timer-btn {
+    background: var(--pomodoro);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timer-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.timer-footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timer-footer p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.settings-btn {
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.settings-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background: var(--dark);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    background: var(--light);
+}
+
+#saveSettings {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background: var(--pomodoro);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#saveSettings:hover {
+    background: #c0392b;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .time {
+        font-size: 4rem;
+    }
+}

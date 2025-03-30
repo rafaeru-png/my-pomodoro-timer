@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="timer-header">
+            <h1>Pomodoro Timer</h1>
+            <div class="timer-tabs">
+                <button class="active" data-mode="pomodoro">Pomodoro</button>
+                <button data-mode="short-break">Pausa Curta</button>
+                <button data-mode="long-break">Pausa Longa</button>
+            </div>
+        </header>
+
+        <main class="timer-display">
+            <div class="time" id="time">25:00</div>
+            <button class="timer-btn" id="startBtn">Começar</button>
+        </main>
+
+        <footer class="timer-footer">
+            <p id="status">Pronto para começar!</p>
+            <div class="settings-btn" id="settingsBtn">
+                <i class="fas fa-cog"></i>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal de Configurações -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <h2>Configurações</h2>
+            <div class="form-group">
+                <label>Pomodoro (minutos)</label>
+                <input type="number" id="pomodoroTime" value="25" min="1">
+            </div>
+            <div class="form-group">
+                <label>Pausa Curta (minutos)</label>
+                <input type="number" id="shortBreakTime" value="5" min="1">
+            </div>
+            <div class="form-group">
+                <label>Pausa Longa (minutos)</label>
+                <input type="number" id="longBreakTime" value="15" min="1">
+            </div>
+            <button id="saveSettings">Salvar</button>
+        </div>
+    </div>
+
+    <!-- Sons -->
+    <audio id="alarmSound" src="assets/alarm.mp3"></audio>
+    <audio id="pauseSound" src="assets/pause.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
